@@ -43,10 +43,7 @@ const getAllTask = async () =>{
   }
  
 }
-useEffect(() => {
-  getAllTask()
 
-}, [])
 
 // to delete task
 const deleteTask = async (id) => {
@@ -60,9 +57,7 @@ const deleteTask = async (id) => {
     toast.error('Not deleted');
   }
 }
-useEffect(() => {
-  getAllTask();
-}, []);
+
 
 // to update task
 const getSingleTask = async(task) =>{
