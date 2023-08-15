@@ -97,21 +97,18 @@ return (
         </h3>
       </div>
       {
-  task.length > 0 ? (
-    task.map((data, index) => (
-      <Task
-        task={data}
-        key={data._id}
-        index={index}
-        updateTask={updateTask}
-        deleteTask={deleteTask}
-        getSingleTask={getSingleTask}
-      />
-    ))
-  ) : (
-    <p>No tasks available.</p>
-  )
+  task.map((data, index) => (
+    <Task
+      task={data}
+      key={data._id}
+      index={index}
+      updateTask={updateTask}
+      deleteTask={deleteTask}
+      getSingleTask={getSingleTask}
+    />
+  ))
 }
+
     
     
      <Form handleInputChange={handleInputChange} createTask={createTask} name={name}/> 
