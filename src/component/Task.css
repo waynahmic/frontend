@@ -1,0 +1,92 @@
+
+.task-form {
+    width: 100%;
+    margin: 2rem 0;
+    /* display: flex; */
+    position: relative;
+  }
+  .task-form input {
+    width: 100%;
+    height: 4rem;
+    font-size: 1.6rem;
+    padding: 0 5px;
+    outline: none;
+    border-radius: 5px;
+    /* margin-right: 5px; */
+  }
+  .task-form button {
+    width: 85%;
+    height: 4rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background-color: var(--color-dark);
+    color: #fff;
+    border: none;
+    transition: all 0.3s;
+    position:absolute;
+    left:5%;
+    
+  }
+  
+  .task-form button:hover {
+    background-color: var(--color-success);
+  }
+  
+  .task {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    background-color: #eee;
+    padding: 10px;
+    margin: 7px 0;
+    height: 5rem;
+    animation: slide-in ease 0.5s;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      transform: translateY(10px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .task::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: var(--color-primary);
+  }
+  
+  .completed {
+    position: relative;
+  }
+  
+  .completed::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: var(--color-success);
+  }
+  
+  .task-icons {
+    font-size: 1.6rem;
+  }
+  
+  .task-icons > * {
+    margin-left: 7px;
+    cursor: pointer;
+  }
+  
