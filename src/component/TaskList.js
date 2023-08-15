@@ -36,7 +36,7 @@ toast.error("An error occurred while creating the task.");
 // to get all task
 const getAllTask = async () =>{
   try {
-    const {data}= await axios.get('https://crud-backend-707b.onrender.com')
+    const {data}= await axios.get('https://crud-backend-707b.onrender.com/')
     setTask(data)
   } catch (error) {
     console.log(error)
