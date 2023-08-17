@@ -23,7 +23,7 @@ const TaskList = () => {
 const createTask = async(e) =>{
   e.preventDefault()
   try{
-    await axios.post('https://frontend-lvn3xpg93-waynahmic.vercel.app', formData)
+    await axios.post('https://crud-backend-707b.onrender.com/', formData)
     console.log(formData)
     toast.success("form created") 
     getAllTask()
@@ -36,7 +36,7 @@ toast.error("An error occurred while creating the task.");
 // to get all task
 const getAllTask = async () =>{
   try {
-    const {data}= await axios.get('https://frontend-lvn3xpg93-waynahmic.vercel.app')
+    const {data}= await axios.get('https://crud-backend-707b.onrender.com/')
     setTask(data)
   } catch (error) {
     console.log(error)
