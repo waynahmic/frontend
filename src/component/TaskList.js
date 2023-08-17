@@ -96,18 +96,21 @@ return (
           <b>Completed Tasks:</b> 0
         </h3>
       </div>
-      {
-  task.map((data, index) => (
-    <Task
-      task={data}
-      key={data._id}
-      index={index}
-      updateTask={updateTask}
-      deleteTask={deleteTask}
-      getSingleTask={getSingleTask}
-    />
-  ))
+      {Array.isArray(task) ? ( task.map((data, index) => (
+  <Task
+    task={data}
+    key={data._id}
+    index={index}
+    updateTask={updateTask}
+    deleteTask={deleteTask}
+    getSingleTask={getSingleTask}
+  />
+))
+) :(
+  <p> No task available </p>
+)
 }
+ 
 
     
     
