@@ -16,7 +16,7 @@ const TaskList = () => {
   const [task, setTask] = useState([])
   const handleInputChange = (e) =>{
     const {name, value} = e.target
-    setFormData({...formData, [name]: value})  // whatever we write in the value, set it to the name no3
+    setFormData({...formData, [name]: value})  // whatever we write in the value, set it to the name... //3
   }
 
 // to create task
