@@ -11,8 +11,9 @@ const TaskList = () => {
   const [formData, setFormData] = useState({name: ''}) //1
   const [isEditing, setIsEditing] = useState(false);
   const [taskID, setTaskID] = useState('');
-  const {name} = formData;  //2
-  
+  const {name} = formData;  //2"
+  const URL = "https://crud-backend-707b.onrender.com"
+
   const [task, setTask] = useState([])
   const handleInputChange = (e) =>{
     const {name, value} = e.target
@@ -23,7 +24,7 @@ const TaskList = () => {
 const createTask = async(e) =>{
   e.preventDefault()
   try{
-    await axios.post('https://crud-backend-707b.onrender.com/', formData)
+    await axios.post(`${URL}/api/tasks/`, formData)
     console.log(formData)
     toast.success("form created") 
     getAllTask()
@@ -36,7 +37,7 @@ toast.error("An error occurred while creating the task.");
 // to get all task
 const getAllTask = async () =>{
   try {
-    const {data}= await axios.get('https://crud-backend-707b.onrender.com/')
+    const {data}= await axios.get(`${URL}/api/tasks/`)
     setTask(data)
   } catch (error) {
     console.log(error)
@@ -48,7 +49,7 @@ const getAllTask = async () =>{
 // to delete task
 const deleteTask = async (id) => {
   try {
-    await axios.delete(`https://crud-backend-707b.onrender.com/${id}`);
+    await axios.delete(`${URL}/api/tasks/${id}`);
     const updatedTasks = task.filter((task) => task._id !== id);
     setTask(updatedTasks);
     toast.success('Task deleted');
@@ -72,7 +73,7 @@ const updateTask = async (e) =>{
     toast.error('Please provide a valid task name.')
   }
   try {
-     await axios.patch(`https://crud-backend-707b.onrender.com/${taskID}`, formData)
+     await axios.patch(`${URL}/api/tasks/${taskID}`, formData)
      setFormData({...formData, name:""})
      setIsEditing(false)
   } catch (error) {
